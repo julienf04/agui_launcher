@@ -1,0 +1,17 @@
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI_Launcher.exe
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI_Launcher.deps.json
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI_Launcher.runtimeconfig.json
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI_Launcher.dll
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI_Launcher.pdb
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\bin\Debug\net6.0-windows\AutoGUI.dll
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.csproj.AssemblyReference.cache
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.AssemblyInfoInputs.cache
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.AssemblyInfo.cs
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.csproj.CoreCompileInputs.cache
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.csproj.CopyComplete
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.dll
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\refint\AutoGUI_Launcher.dll
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.pdb
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\AutoGUI_Launcher.genruntimeconfig.cache
+C:\Users\julie\C# Proyetos\AutoGUI_Launcher\AutoGUI\obj\Debug\net6.0-windows\ref\AutoGUI_Launcher.dll

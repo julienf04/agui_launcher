@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "O9ifIIivwYoYCJI6yiGnHlFE9zCYralSYQTqgGluW/lGLENuUH5JLHYNceW5nvOl6ClrfAhhBLpFA2qV7r2nDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\julie\\.nuget\\packages\\autogui\\1.2.0\\autogui.1.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

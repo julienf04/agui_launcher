@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "agui", "agui.csproj", "{DA215B09-F4E0-4312-99AD-A1E4B785581D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBC737D6-4DBE-49DB-AAF0-D574FB94C615}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AutoGUI_Launcher/1.0.0": {
+        "dependencies": {
+          "AutoGUI": "1.2.0"
+        },
+        "runtime": {
+          "AutoGUI_Launcher.dll": {}
+        }
+      },
+      "AutoGUI/1.2.0": {
+        "runtime": {
+          "lib/net6.0-windows7.0/AutoGUI.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AutoGUI_Launcher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AutoGUI/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r6nSJmeGlsVR2KDEkO6SMFtMNx7MAWFRE+oTp06TYJ6ueCoeAGSiY1z95X4cZzC3D3qgF21rdEynxkG26dxHcQ==",
+      "path": "autogui/1.2.0",
+      "hashPath": "autogui.1.2.0.nupkg.sha512"
+    }
+  }
+}
