@@ -1,24 +1,39 @@
 ﻿using AutoGUI;
+using System.Diagnostics;
 
 namespace agui
 {
     class Program
     {
-        private const string _CPOS_KEY = "cpos",
-                             _DELAY_KEY = "delay",
-                             _KEY_KEY = "key",
-                             _CGETPOS_KEY = "cgetpos",
-                             _HELP_KEY = "help",
-                             _LOOPSTART_KEY = "loopstart",
-                             _LOOPEND_KEY = "loopend",
-                             _CCLICKL_KEY = "cclickl",
-                             _CCLICKR_KEY = "cclickr",
-                             _CCLICKUPL_KEY = "cclickupl",
-                             _CCLICKUPR_KEY = "cclickupr",
-                             _CCLICKDOWNL_KEY = "cclickdownl",
-                             _CCLICKDOWNR_KEY = "cclickdownr",
-                             _CWHEELHOR_KEY = "cwheelhor",
-                             _CWHEELVER_KEY = "cwheelver";
+        private const string _COMMAND_CPOS = "cpos",
+            _COMMAND_DELAY = "delay",
+            _COMMAND_KEY = "key",
+            _COMMAND_CGETPOS = "cgetpos",
+            _COMMAND_HELP = "help",
+            _COMMAND_LOOPSTART = "loopstart",
+            _COMMAND_LOOPEND = "loopend",
+            _COMMAND_CCLICKL = "cclickl",
+            _COMMAND_CCLICKR = "cclickr",
+            _COMMAND_CCLICKUPL = "cclickupl",
+            _COMMAND_CCLICKUPR = "cclickupr",
+            _COMMAND_CCLICKDOWNL = "cclickdownl",
+            _COMMAND_CCLICKDOWNR = "cclickdownr",
+            _COMMAND_CWHEELHOR = "cwheelhor",
+            _COMMAND_CWHEELVER = "cwheelver";
+
+        private const ConsoleKey _KEY_NEXT_STATEMENT = ConsoleKey.N,
+            _KEY_BREAK_LOOP = ConsoleKey.Q,
+            _KEY_QUIT_PROGRAM = ConsoleKey.Escape;
+        private const ConsoleModifiers _MODIFIER_NEXT_STATEMENT = ConsoleModifiers.Control,
+            _MODIFIER_BREAK_LOOP = ConsoleModifiers.Control,
+            _MODIFIER_QUIT_PROGRAM = 0;
+        private const string _STRING_NEXT_STATEMENT = "Ctrl+N",
+            _STRING_BREAK_LOOP = "Ctrl+Q",
+            _STRING_QUIT_PROGRAM = "ESC";
+
+        private static CommandLine _commandLine;
+        private static int _loopStartIndex;
+        private static bool _breakLoop = false;
 
 
         private static void Cpos(string param)
@@ -38,65 +53,71 @@ namespace agui
             Keyboard.Set(s);
         }
 
-        private static void Cgetpos()
+        private static void Cgetpos(string param)
         {
             Point pos = Cursor.GetPos();
             Console.WriteLine("Pos: X=" + pos.X + ", Y=" + pos.Y);
         }
 
-        private static void Help()
+        private static void Help(string param)
         {
             Console.WriteLine("-- Manipulate Cursor and Keyboard sequentialy");
+
+            Console.WriteLine("- Controls:");
+            Console.WriteLine($"   Press {_STRING_NEXT_STATEMENT} to go to the next statment immediately:");
+            Console.WriteLine($"   Press {_STRING_BREAK_LOOP} to break the loop at the next loopend statement found:");
+            Console.WriteLine($"   Press {_STRING_QUIT_PROGRAM} to finalize the program immediately:");
+
             Console.WriteLine("- Commands:");
 
-            Console.WriteLine("   [help]: Get help about this program");
-            Console.WriteLine("    Example: 'agui help'. Prints extra info about this program");
+            Console.WriteLine($"   [{_COMMAND_HELP}]: Get help about this program");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_HELP}'. Prints extra info about this program");
 
-            Console.WriteLine("   [cpos]: Abreviation of cursor pos. Indicates X and Y position in pixels and cursor will go there");
-            Console.WriteLine("    Example: 'agui cpos=350,100'. Cursor will go to position X=350 and Y=100 in pixels");
+            Console.WriteLine($"   [{_COMMAND_CPOS}]: Abreviation of cursor pos. Indicates X and Y position in pixels and cursor will go there");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CPOS}=350,100'. Cursor will go to position X=350 and Y=100 in pixels");
 
-            Console.WriteLine("   [cclickl]: Abreviation of cursor click left. Do left click at the current position");
-            Console.WriteLine("    Example: 'agui cclickl'. Do left click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKL}]: Abreviation of cursor click left. Do left click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKL}'. Do left click at the curent position");
 
-            Console.WriteLine("   [cclickr]: Abreviation of cursor click right. Do right click at the current position");
-            Console.WriteLine("    Example: 'agui cclickr'. Do right click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKR}]: Abreviation of cursor click right. Do right click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKR}'. Do right click at the curent position");
 
-            Console.WriteLine("   [cclickupl]: Abreviation of cursor click up left. Up left click at the current position");
-            Console.WriteLine("    Example: 'agui cclickupl'. Up left click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKUPL}]: Abreviation of cursor click up left. Up left click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPL}'. Up left click at the curent position");
 
-            Console.WriteLine("   [cclickupr]: Abreviation of cursor click up right. Up right click at the current position");
-            Console.WriteLine("    Example: 'agui cclickupr'. Up right click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKUPR}]: Abreviation of cursor click up right. Up right click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPR}'. Up right click at the curent position");
 
-            Console.WriteLine("   [cclickdownl]: Abreviation of cursor click down left. Down left click at the current position");
-            Console.WriteLine("    Example: 'agui cclickdownl'. Down left click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKDOWNL}]: Abreviation of cursor click down left. Down left click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNL}'. Down left click at the curent position");
 
-            Console.WriteLine("   [cclickdownr]: Abreviation of cursor click down right. Down right click at the current position");
-            Console.WriteLine("    Example: 'agui cclickdownl'. Down right click at the curent position");
+            Console.WriteLine($"   [{_COMMAND_CCLICKDOWNR}]: Abreviation of cursor click down right. Down right click at the current position");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNR}'. Down right click at the curent position");
 
-            Console.WriteLine("   [cwheelhor]: Abreviation of cursor wheel horizontal. Moves the horizontal wheel of the mouse the given value");
-            Console.WriteLine("    Example: 'agui cwheelhor=30'. Moves the horizontal wheel of the mouse 30 units");
+            Console.WriteLine($"   [{_COMMAND_CWHEELHOR}]: Abreviation of cursor wheel horizontal. Moves the horizontal wheel of the mouse the given value");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELHOR}=30'. Moves the horizontal wheel of the mouse 30 units");
 
-            Console.WriteLine("   [cwheelver]: Abreviation of cursor wheel vertical. Moves the vertical wheel of the mouse the given value");
-            Console.WriteLine("    Example: 'agui cwheelhor=60'. Moves the vertical wheel of the mouse 60 units");
+            Console.WriteLine($"   [{_COMMAND_CWHEELVER}]: Abreviation of cursor wheel vertical. Moves the vertical wheel of the mouse the given value");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELVER}=60'. Moves the vertical wheel of the mouse 60 units");
 
-            Console.WriteLine("   [delay]: Indicates a delay in the sequency, in miliseconds.");
-            Console.WriteLine("    Example: 'agui delay=1000'. Thread sleeps 1000 miliseconds");
+            Console.WriteLine($"   [{_COMMAND_DELAY}]: Indicates a delay in the sequency, in miliseconds.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_DELAY}=1000'. Thread sleeps 1000 miliseconds");
 
-            Console.WriteLine("   [key]: Indicates a string to be printed by keyboard");
-            Console.WriteLine("    Example: 'agui key=\"hello world!\"'. Keyboard press given keys");
+            Console.WriteLine($"   [{_COMMAND_KEY}]: Indicates a string to be printed by keyboard");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_KEY}=\"hello world!\"'. Keyboard press given keys");
 
-            Console.WriteLine("   [loopstart]: The start a loop");
-            Console.WriteLine("    Example: 'agui loopstart cclick loopend'. Do click until ESC key is pressed");
+            Console.WriteLine($"   [{_COMMAND_LOOPSTART}]: The start a loop");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed");
 
-            Console.WriteLine("   [loopend]: Go to the last loopstart sentence until ESC key is pressed");
-            Console.WriteLine("    Example: 'agui loopstart cclick loopend'. Do click until ESC key is pressed");
+            Console.WriteLine($"   [{_COMMAND_LOOPEND}]: Go to the last loopstart sentence until {_STRING_BREAK_LOOP} key is pressed");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed");
 
-            Console.WriteLine("   [cgetpos]: Abreviation of cursor get pos. Get current cursor position and print it");
-            Console.WriteLine("    Example: 'agui cgetpos'. Prints the current cursor position");
+            Console.WriteLine($"   [{_COMMAND_CGETPOS}]: Abreviation of cursor get pos. Get current cursor position and print it");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CGETPOS}'. Prints the current cursor position");
 
             Console.WriteLine();
             Console.WriteLine("- Example of how to use this program:");
-            Console.WriteLine("    'agui loopstart cpos=200,150 cclick delay=500 key=\"Hello world!\" delay=1000 cpos=800,500 loopend'");
+            Console.WriteLine($"    'agui {_COMMAND_LOOPSTART} {_COMMAND_CPOS}=200,150 {_COMMAND_CCLICKL} {_COMMAND_DELAY}=500 {_COMMAND_KEY}=\"Hello world!\" {_COMMAND_DELAY}=1000 {_COMMAND_CPOS}=800,500 {_COMMAND_LOOPEND}'");
             Console.WriteLine("     The previous command causes this sequence:");
             Console.WriteLine("      1: Start a loop");
             Console.WriteLine("      2: Set cursor position to X=200, Y=150");
@@ -105,45 +126,60 @@ namespace agui
             Console.WriteLine("      5: Keyboard press Hello world!");
             Console.WriteLine("      6: Wait 1000 miliseconds");
             Console.WriteLine("      7: Set cursor position to X=800, Y=500");
-            Console.WriteLine("      8: Go to 1 until ESC key is pressed");
+            Console.WriteLine($"      8: Go to 1 until {_STRING_BREAK_LOOP} key is pressed (to break the loop) or {_STRING_QUIT_PROGRAM} is pressed (to finalize the program immediately)");
         }
 
-        private static void Loop(Action[] actions)
+        private static void LoopStart(string param)
         {
-            WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY);
-            do
-            {
-                for (int i = 0; i < actions.Length; i++)
-                    actions[i]();
-            } while (WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY) == 0);
+            _loopStartIndex = _commandLine.CurrentParamsIndex;
         }
 
-        private static void Cclickl()
+        private static void LoopEnd(string param)
+        {
+            if (!_breakLoop)
+                _commandLine.CurrentParamsIndex = _loopStartIndex;
+        }
+
+        //private static void Loop(Action[] actions)
+        //{
+        //    WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY);
+        //    CancellationToken cancellationToken = new CancellationToken();
+        //    Task.Run(() =>
+        //    {
+        //        do
+        //        {
+        //            for (int i = 0; i < actions.Length; i++)
+        //                actions[i]();
+        //        } while (WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY) == 0);
+        //    }, cancellationToken);
+        //}
+
+        private static void Cclickl(string param)
         {
             Cursor.LeftClick();
         }
 
-        private static void Cclickr()
+        private static void Cclickr(string param)
         {
             Cursor.RightClick();
         }
 
-        private static void Cclickupl()
+        private static void Cclickupl(string param)
         {
             Cursor.LeftClickUp();
         }
 
-        private static void Cclickupr()
+        private static void Cclickupr(string param)
         {
             Cursor.RightClickUp();
         }
 
-        private static void Cclickdownl()
+        private static void Cclickdownl(string param)
         {
             Cursor.LeftClickDown();
         }
 
-        private static void Cclickdownr()
+        private static void Cclickdownr(string param)
         {
             Cursor.RightClickDown();
         }
@@ -158,110 +194,53 @@ namespace agui
             Cursor.VerticalWheel(int.Parse(param));
         }
 
+        private static void NextStatementInput()
+        {
+            _commandLine.GoToNextStatement();
+        }
+
+        private static void BreakLoopInput()
+        {
+            _breakLoop = true;
+        }
+
+        private static void QuitProgramInput()
+        {
+            Process.GetCurrentProcess().Kill();
+        }
+
         static void Main(string[] args)
         {
-            List<Action> actionsSequence = new List<Action>();
-            bool loopStart = false;
-
-            for (int i = 0; i < args.Length; i++)
-            {
-                string[] keyParams = args[i].Split('=', 3); // 0 is key, 1 is params
-
-
-                switch (keyParams[0])
+            _commandLine = new CommandLine(args, "=", true,
+                new Dictionary<string, Action<string>>()
                 {
-                    case _CPOS_KEY:
-                        Cpos(keyParams[1]);
-                        if (loopStart)
-                            actionsSequence.Add(() => Cpos(keyParams[1]));
-                        break;
+                    { _COMMAND_CPOS, Cpos },
+                    { _COMMAND_DELAY, Delay },
+                    { _COMMAND_KEY, Key },
+                    { _COMMAND_CGETPOS, Cgetpos },
+                    { _COMMAND_HELP, Help },
+                    { _COMMAND_LOOPSTART, LoopStart },
+                    { _COMMAND_LOOPEND, LoopEnd },
+                    { _COMMAND_CCLICKL, Cclickl },
+                    { _COMMAND_CCLICKR, Cclickr },
+                    { _COMMAND_CCLICKUPL, Cclickupl },
+                    { _COMMAND_CCLICKUPR, Cclickupr },
+                    { _COMMAND_CCLICKDOWNL, Cclickdownl },
+                    { _COMMAND_CCLICKDOWNR, Cclickdownr },
+                    { _COMMAND_CWHEELHOR, Cwheelhor },
+                    { _COMMAND_CWHEELVER, Cwheelver },
+                });
 
-                    case _DELAY_KEY:
-                        Delay(keyParams[1]);
-                        if (loopStart)
-                            actionsSequence.Add(() => Delay(keyParams[1]));
-                        break;
+            Input consoleInput = new Input(true,
+                new Dictionary<KeyInfo, Action>()
+                {
+                    { new KeyInfo(_KEY_NEXT_STATEMENT, _MODIFIER_NEXT_STATEMENT), NextStatementInput },
+                    { new KeyInfo(_KEY_BREAK_LOOP, _MODIFIER_BREAK_LOOP), BreakLoopInput },
+                    { new KeyInfo(_KEY_QUIT_PROGRAM, _MODIFIER_QUIT_PROGRAM), QuitProgramInput }
+                });
 
-                    case _KEY_KEY:
-                        Key(keyParams[1]);
-                        if (loopStart)
-                            actionsSequence.Add(() => Key(keyParams[1]));
-                        break;
-
-                    case _CGETPOS_KEY:
-                        Cgetpos();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cgetpos());
-                        break;
-
-                    case _HELP_KEY:
-                        Help();
-                        if (loopStart)
-                            actionsSequence.Add(() => Help());
-                        break;
-
-                    case _LOOPSTART_KEY:
-                        loopStart = true;
-                        break;
-
-                    case _LOOPEND_KEY:
-                        if (loopStart)
-                        {
-                            Loop(actionsSequence.ToArray());
-                            loopStart = false;
-                            actionsSequence.Clear();
-                        }
-                        break;
-
-                    case _CCLICKL_KEY:
-                        Cclickl();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickl());
-                        break;
-
-                    case _CCLICKR_KEY:
-                        Cclickr();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickr());
-                        break;
-
-                    case _CCLICKUPL_KEY:
-                        Cclickupl();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickupl());
-                        break;
-
-                    case _CCLICKUPR_KEY:
-                        Cclickupr();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickupr());
-                        break;
-
-                    case _CCLICKDOWNL_KEY:
-                        Cclickdownl();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickdownl());
-                        break;
-
-                    case _CCLICKDOWNR_KEY:
-                        Cclickdownr();
-                        if (loopStart)
-                            actionsSequence.Add(() => Cclickdownr());
-                        break;
-
-                    case _CWHEELHOR_KEY:
-                        Cwheelhor(keyParams[1]);
-                        if (loopStart)
-                            actionsSequence.Add(() => Cwheelhor(keyParams[1]));
-                        break;
-
-                    case _CWHEELVER_KEY:
-                        Cwheelver(keyParams[1]);
-                        if (loopStart)
-                            actionsSequence.Add(() => Cwheelver(keyParams[1]));
-                        break;
-                }
-            }
+            consoleInput.RunInputAsync();
+            _commandLine.Invoke();
         }
     }
 }

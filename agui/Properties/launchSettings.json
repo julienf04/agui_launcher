@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "agui": {
+      "commandName": "Project",
+      "commandLineArgs": "cgetpos"
+    }
+  }
+}
