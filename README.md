@@ -4,7 +4,7 @@
 
 ### Install agui
 
-1. Download this file: PONER CARPETA
+1. Download this file: https://drive.google.com/file/d/10f7-MO71_ZhUwKir4RUqDODwxm0FSSZE/view?usp=sharing
 2. Unzip it.
 3. Click setup file and install it.
 4. Add to the path system environment variables the folder where the app were installed.

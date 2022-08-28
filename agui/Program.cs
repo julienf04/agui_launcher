@@ -64,69 +64,69 @@ namespace agui
             Console.WriteLine("-- Manipulate Cursor and Keyboard sequentialy");
 
             Console.WriteLine("- Controls:");
-            Console.WriteLine($"   Press {_STRING_NEXT_STATEMENT} to go to the next statment immediately:");
-            Console.WriteLine($"   Press {_STRING_BREAK_LOOP} to break the loop at the next loopend statement found:");
-            Console.WriteLine($"   Press {_STRING_QUIT_PROGRAM} to finalize the program immediately:");
+            Console.WriteLine($"   Press {_STRING_NEXT_STATEMENT} to go to the next statment immediately.");
+            Console.WriteLine($"   Press {_STRING_BREAK_LOOP} to break the loop at the next loopend statement found.");
+            Console.WriteLine($"   Press {_STRING_QUIT_PROGRAM} to finalize the program immediately.");
 
             Console.WriteLine("- Commands:");
 
-            Console.WriteLine($"   [{_COMMAND_HELP}]: Get help about this program");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_HELP}'. Prints extra info about this program");
+            Console.WriteLine($"   '{_COMMAND_HELP}': Get help about this program.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_HELP}'. Prints extra info about this program.");
 
-            Console.WriteLine($"   [{_COMMAND_CPOS}]: Abreviation of cursor pos. Indicates X and Y position in pixels and cursor will go there");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CPOS}=350,100'. Cursor will go to position X=350 and Y=100 in pixels");
+            Console.WriteLine($"   '{_COMMAND_CPOS}=[value]': Abreviation of cursor pos. Indicates X and Y position in pixels and cursor will go there.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CPOS}=350,100'. Cursor will go to position X=350 and Y=100 in pixels.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKL}]: Abreviation of cursor click left. Do left click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKL}'. Do left click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKL}': Abreviation of cursor click left. Do left click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKL}'. Do left click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKR}]: Abreviation of cursor click right. Do right click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKR}'. Do right click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKR}': Abreviation of cursor click right. Do right click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKR}'. Do right click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKUPL}]: Abreviation of cursor click up left. Up left click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPL}'. Up left click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKUPL}': Abreviation of cursor click up left. Up left click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPL}'. Up left click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKUPR}]: Abreviation of cursor click up right. Up right click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPR}'. Up right click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKUPR}': Abreviation of cursor click up right. Up right click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKUPR}'. Up right click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKDOWNL}]: Abreviation of cursor click down left. Down left click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNL}'. Down left click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKDOWNL}': Abreviation of cursor click down left. Down left click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNL}'. Down left click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CCLICKDOWNR}]: Abreviation of cursor click down right. Down right click at the current position");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNR}'. Down right click at the curent position");
+            Console.WriteLine($"   '{_COMMAND_CCLICKDOWNR}': Abreviation of cursor click down right. Down right click at the current position.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CCLICKDOWNR}'. Down right click at the curent position.");
 
-            Console.WriteLine($"   [{_COMMAND_CWHEELHOR}]: Abreviation of cursor wheel horizontal. Moves the horizontal wheel of the mouse the given value");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELHOR}=30'. Moves the horizontal wheel of the mouse 30 units");
+            Console.WriteLine($"   '{_COMMAND_CWHEELHOR}=[value]': Abreviation of cursor wheel horizontal. Moves the horizontal wheel of the mouse the given value.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELHOR}=30'. Moves the horizontal wheel of the mouse 30 units.");
 
-            Console.WriteLine($"   [{_COMMAND_CWHEELVER}]: Abreviation of cursor wheel vertical. Moves the vertical wheel of the mouse the given value");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELVER}=60'. Moves the vertical wheel of the mouse 60 units");
+            Console.WriteLine($"   '{_COMMAND_CWHEELVER}=[value]': Abreviation of cursor wheel vertical. Moves the vertical wheel of the mouse the given value.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CWHEELVER}=60'. Moves the vertical wheel of the mouse 60 units.");
 
-            Console.WriteLine($"   [{_COMMAND_DELAY}]: Indicates a delay in the sequency, in miliseconds.");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_DELAY}=1000'. Thread sleeps 1000 miliseconds");
+            Console.WriteLine($"   '{_COMMAND_DELAY}=[value]': Indicates a delay in the sequency, in miliseconds.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_DELAY}=1000'. Thread sleeps 1000 miliseconds.");
 
-            Console.WriteLine($"   [{_COMMAND_KEY}]: Indicates a string to be printed by keyboard");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_KEY}=\"hello world!\"'. Keyboard press given keys");
+            Console.WriteLine($"   '{_COMMAND_KEY}=\"[value]\": Indicates a string to be printed by keyboard.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_KEY}=\"hello world!\"'. Keyboard press given keys.");
 
-            Console.WriteLine($"   [{_COMMAND_LOOPSTART}]: The start a loop");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed");
+            Console.WriteLine($"   '{_COMMAND_LOOPSTART}': The start a loop.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed.");
 
-            Console.WriteLine($"   [{_COMMAND_LOOPEND}]: Go to the last loopstart sentence until {_STRING_BREAK_LOOP} key is pressed");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed");
+            Console.WriteLine($"   '{_COMMAND_LOOPEND}': Go to the last loopstart sentence until {_STRING_BREAK_LOOP} key is pressed.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_LOOPSTART} {_COMMAND_CCLICKL} {_COMMAND_LOOPEND}'. Do left click until {_STRING_BREAK_LOOP} key is pressed.");
 
-            Console.WriteLine($"   [{_COMMAND_CGETPOS}]: Abreviation of cursor get pos. Get current cursor position and print it");
-            Console.WriteLine($"    Example: 'agui {_COMMAND_CGETPOS}'. Prints the current cursor position");
+            Console.WriteLine($"   '{_COMMAND_CGETPOS}': Abreviation of cursor get pos. Get current cursor position and print it.");
+            Console.WriteLine($"    Example: 'agui {_COMMAND_CGETPOS}'. Prints the current cursor position.");
 
             Console.WriteLine();
             Console.WriteLine("- Example of how to use this program:");
             Console.WriteLine($"    'agui {_COMMAND_LOOPSTART} {_COMMAND_CPOS}=200,150 {_COMMAND_CCLICKL} {_COMMAND_DELAY}=500 {_COMMAND_KEY}=\"Hello world!\" {_COMMAND_DELAY}=1000 {_COMMAND_CPOS}=800,500 {_COMMAND_LOOPEND}'");
             Console.WriteLine("     The previous command causes this sequence:");
-            Console.WriteLine("      1: Start a loop");
-            Console.WriteLine("      2: Set cursor position to X=200, Y=150");
-            Console.WriteLine("      3: Do click");
-            Console.WriteLine("      4: Wait 500 miliseconds");
+            Console.WriteLine("      1: Start a loop.");
+            Console.WriteLine("      2: Set cursor position to X=200, Y=150.");
+            Console.WriteLine("      3: Do click.");
+            Console.WriteLine("      4: Wait 500 miliseconds.");
             Console.WriteLine("      5: Keyboard press Hello world!");
-            Console.WriteLine("      6: Wait 1000 miliseconds");
+            Console.WriteLine("      6: Wait 1000 miliseconds.");
             Console.WriteLine("      7: Set cursor position to X=800, Y=500");
-            Console.WriteLine($"      8: Go to 1 until {_STRING_BREAK_LOOP} key is pressed (to break the loop) or {_STRING_QUIT_PROGRAM} is pressed (to finalize the program immediately)");
+            Console.WriteLine($"      8: Go to 1 until {_STRING_BREAK_LOOP} key is pressed (to break the loop) or {_STRING_QUIT_PROGRAM} is pressed (to finalize the program immediately).");
         }
 
         private static void LoopStart(string param)
