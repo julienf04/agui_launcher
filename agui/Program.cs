@@ -140,20 +140,6 @@ namespace agui
                 _commandLine.CurrentParamsIndex = _loopStartIndex;
         }
 
-        //private static void Loop(Action[] actions)
-        //{
-        //    WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY);
-        //    CancellationToken cancellationToken = new CancellationToken();
-        //    Task.Run(() =>
-        //    {
-        //        do
-        //        {
-        //            for (int i = 0; i < actions.Length; i++)
-        //                actions[i]();
-        //        } while (WINAPI.GetAsyncKeyState(WINAPI.ESC_KEY) == 0);
-        //    }, cancellationToken);
-        //}
-
         private static void Cclickl(string param)
         {
             Cursor.LeftClick();
