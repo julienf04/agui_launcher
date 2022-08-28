@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yCcMPPpJsGXSPlzQYvAlAm1LkphPpRnOilQ5oxEq0GQhKq032HBrgGOegGUfIAjB7uu5PA9eGW9T7jdQCFJJbQ==",
+  "dgSpecHash": "vAL1dtKi6fIKioXDdZZnksJhzW90ynAtDlgjjxXJtXhRXtDONKXIr7ImKNPBh1fE4rI69Rk5W9INtfUjOjz/Fw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\agui.csproj",
+  "projectFilePath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julie\\.nuget\\packages\\autogui\\1.2.0\\autogui.1.2.0.nupkg.sha512",
     "C:\\Users\\julie\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.4\\microsoft.netcore.app.runtime.win-x64.6.0.4.nupkg.sha512",

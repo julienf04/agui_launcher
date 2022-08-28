@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\agui.csproj": {}
+    "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\agui.csproj": {
+    "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\agui.csproj",
+        "projectUniqueName": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj",
         "projectName": "agui",
-        "projectPath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\agui.csproj",
+        "projectPath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\agui.csproj",
         "packagesPath": "C:\\Users\\julie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\AutoGUI\\obj\\publish\\win-x64\\",
+        "outputPath": "C:\\Users\\julie\\C# Proyetos\\AutoGUI_Launcher\\agui\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
