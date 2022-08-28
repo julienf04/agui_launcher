@@ -4,11 +4,11 @@
 
 ### Install agui
 
-**1. **Download this file: PONER CARPETA
-**2. **Unzip it.
-**3. **Click setup file and install it.
-**4. **Add to the path system environment variables the folder where the app were installed.
-**5. **Thats all :)
+1. Download this file: PONER CARPETA
+2. Unzip it.
+3. Click setup file and install it.
+4. Add to the path system environment variables the folder where the app were installed.
+5. Thats all :)
 
 ### Manipulate Cursor and Keyboard sequentialy
 
@@ -91,11 +91,11 @@
 - `agui loopstart cpos=200,150 cclickl delay=500 key="Hello world!" delay=1000 cpos=800,500 loopend`
 
 The previous command causes this sequence:
-**1. **Start a loop.
-**2. **Set cursor position to X=200, Y=150.
-**3. **Do click.
-**4. **Wait 500 miliseconds.
-**5. **Keyboard press Hello world!
-**6. **Wait 1000 miliseconds.
-**7. **Set cursor position to X=800, Y=500
-**8. **Go to 1 until **Ctrl+Q** key is pressed (to break the loop) or **ESC** is pressed (to finalize the program immediately).
+1. Start a loop.
+2. Set cursor position to X=200, Y=150.
+3. Do click.
+4. Wait 500 miliseconds.
+5. Keyboard press Hello world!
+6. Wait 1000 miliseconds.
+7. Set cursor position to X=800, Y=500
+8. Go to 1 until **Ctrl+Q** key is pressed (to break the loop) or **ESC** is pressed (to finalize the program immediately).
