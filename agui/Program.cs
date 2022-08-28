@@ -200,6 +200,7 @@ namespace agui
             if (args.Length <= 0)
             {
                 Console.WriteLine($"This app should be used through CMD, giving some arguments. For more info, type 'agui {_COMMAND_HELP}'");
+                Console.WriteLine($"Press any key to continue...");
                 Console.ReadKey(true);
                 return;
             }
