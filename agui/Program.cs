@@ -211,6 +211,13 @@ namespace agui
 
         static void Main(string[] args)
         {
+            if (args.Length <= 0)
+            {
+                Console.WriteLine($"This app should be used through CMD, giving some arguments. For more info, type 'agui {_COMMAND_HELP}'");
+                Console.ReadKey(true);
+                return;
+            }
+
             _commandLine = new CommandLine(args, "=", true,
                 new Dictionary<string, Action<string>>()
                 {
