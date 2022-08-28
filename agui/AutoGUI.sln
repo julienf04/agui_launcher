@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "agui", "agui.csproj", "{DA215B09-F4E0-4312-99AD-A1E4B785581D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "agui_installer", "..\agui_installer\agui_installer.vdproj", "{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,16 +27,6 @@ Global
 		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Release|x64.Build.0 = Release|x64
 		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Release|x86.ActiveCfg = Release|x86
 		{DA215B09-F4E0-4312-99AD-A1E4B785581D}.Release|x86.Build.0 = Release|x86
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Debug|Any CPU.ActiveCfg = Debug
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Debug|x64.ActiveCfg = Debug
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Debug|x64.Build.0 = Debug
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Debug|x86.ActiveCfg = Debug
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Debug|x86.Build.0 = Debug
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Release|Any CPU.ActiveCfg = Release
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Release|x64.ActiveCfg = Release
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Release|x64.Build.0 = Release
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Release|x86.ActiveCfg = Release
-		{A5FA1F16-6F12-4C60-816A-65EDE65B83D5}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
